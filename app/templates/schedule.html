@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Schedule Waste Collection</h2>
+<form method="POST">
+    <input type="date" name="schedule_date" required>
+    <button type="submit">Schedule</button>
+</form>
+{% endblock %}

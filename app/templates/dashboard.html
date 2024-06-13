@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Dashboard</h2>
+<a href="{{ url_for('household.schedule') }}">Schedule Waste Collection</a>
+<h3>Schedules</h3>
+<ul>
+    {% for schedule in schedules %}
+    <li>{{ schedule.schedule_date }} - {{ schedule.status }}</li>
+    {% endfor %}
+</ul>
+<h3>Recycling Tracker</h3>
+<ul>
+    {% for item in recycling %}
+    <li>{{ item.recycled_date }} - {{ item.recycled_amount }} kg</li>
+    {% endfor %}
+</ul>
+{% endblock %}

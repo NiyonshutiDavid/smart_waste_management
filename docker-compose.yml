@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"  # Changed from 5000:80 to 80:80 to expose the application on port 80
+    environment:
+      - FLASK_ENV=production
+      - DATABASE_URL=sqlite:///smart_waste_management.db
+    volumes:
+      - .:/app
+    command: gunicorn --bind 0.0.0.0:80 app:app
